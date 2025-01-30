@@ -23,7 +23,7 @@ class ChessOpening:
     name: str
     moves: str
     eco_code: Optional[str] = None
-    ai_comment: Optional[str] = None 
+    ai_comment: Optional[str] = None  # AI-generated commentary replaces description
 
 
 class OpeningDetector:
@@ -85,10 +85,24 @@ class OpeningDetector:
 class ChessCommentaryAI:
     def __init__(self):
         """Initializes the AI model for generating chess commentary."""
-        self.tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
-        # Load the ONNX model (path might need to be adjusted)
-        self.session = onnxruntime.InferenceSession("gpt2_130m.onnx")
-        
+
+        # Load configuration from config.json
+        config_path = Path("config.json")
+        if not config_path.exists():
+            raise FileNotFoundError("Config file not found: config.json")
+
+        with open(config_path, "r") as file:
+            config = json.load(file)
+
+        tokenizer_model = config.get("tokenizer")
+        onnx_model_path = config.get("onnx_model")
+
+        # Load tokenizer from the specified model
+        self.tokenizer = GPT2Tokenizer.from_pretrained(tokenizer_model)
+
+        # Load the ONNX model from the specified path
+        self.session = onnxruntime.InferenceSession(onnx_model_path)
+
         self.max_length = 32
 
     def generate_comment(self, opening_name: str, moves: str) -> str:

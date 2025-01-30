@@ -1,0 +1,4 @@
+{
+    "tokenizer": "openai-community/gpt2",
+    "onnx_model": "gpt2_130m.onnx"
+}

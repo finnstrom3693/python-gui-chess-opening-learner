@@ -1,0 +1,5 @@
+GPT2 Model :
+
+[Default]
+openai-community/gpt2
+gpt2_130m.onnx
