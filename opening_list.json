@@ -1,0 +1,27 @@
+{
+    "1. e4 e5 2. Nf3": {
+        "name": "King's Pawn Game",
+        "moves": "1. e4 e5 2. Nf3",
+        "eco_code": "C20"
+    },
+    "1. e4 e5 2. Nf3 Nc6 3. Bb5": {
+        "name": "Ruy Lopez",
+        "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5",
+        "eco_code": "C60"
+    },
+    "1. e4 c5": {
+        "name": "Sicilian Defense",
+        "moves": "1. e4 c5",
+        "eco_code": "B20"
+    },
+    "1. d4 d5": {
+        "name": "Queen's Pawn Game",
+        "moves": "1. d4 d5",
+        "eco_code": "D00"
+    },
+    "1. e4 e5 2. Nf3 Nc6 3. Bc4": {
+        "name": "Italian Game",
+        "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4",
+        "eco_code": "C50"
+    }
+}

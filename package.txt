@@ -1,0 +1,7 @@
+PyQt5
+python-chess
+pyinstaller
+transformers
+onnxruntime
+numpy
+pathlib
